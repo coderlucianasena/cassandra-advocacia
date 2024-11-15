@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Jucá&Flexa Advogadas Associadas</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var title = "Jucá&Flexa Advogadas Associadas";
+      var speed = 200; 
+      var index = 0;
+      var isScrolling = true;
+
+      function scrollTitle() {
+        if (isScrolling) {
+          document.title = title.substring(index) + " " + title.substring(0, index);
+          index++;
+          if (index > title.length) {
+            isScrolling = false; 
+            setTimeout(resetTitle, 2000); 
+          } else {
+            setTimeout(scrollTitle, speed);
+          }
+        }
+      }
+
+      function resetTitle() {
+        document.title = title; 
+        index = 0;
+        isScrolling = true;
+        setTimeout(scrollTitle, 2000); 
+      }
+
+      scrollTitle();
+    });
+  </script>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logotipo-2.png" alt="">
+        <div class="text-container">
+          <h1 class="sitename">Jucá&Flexa</h1>
+          <p>Advogadas Associadas</p>
+        </div>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- <div class="social-links d-flex justify-content-center">
+            <a href=""><i class="bi bi-whatsapp"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div> -->
+          <li><a href="#hero" class="active">Ínicio</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#services">Serviços</a></li> 
+          <li><a href="#team">Equipe</a></li>
+          <li><a href="#recent-posts">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active"
+          style="background-image: url('/assets/img/home/1.png'); background-size: cover; background-position: center;">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Seja Bem-vindo(a) à <br><span>Jucá & Flexa Advogadas
+                Associadas</span></h2>
+            <p class="animate__animated animate__fadeInUp">
+              Defendemos seus direitos com dedicação e expertise.
+            </p>
+            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sobre nós</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item"
+          style="background-image: url('/assets/img/home/2.png'); background-size: cover; background-position: center;">
+          <div class="carousel-container">
+            <!-- <img src="assets/img/logotipo-1.png" alt=""> -->
+            <h2 class="animate__animated animate__fadeInDown">Especialistas em Direito Trabalhista</h2>
+            <p class="animate__animated animate__fadeInUp">
+              Nossa equipe está preparada para oferecer soluções jurídicas eficazes e personalizadas para cada cliente.
+            </p>
+            <a href="#team" class="btn-get-started animate__animated animate__fadeInUp scrollto">Equipe</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item"
+          style="background-image: url('/assets/img/home/3.png'); background-size: cover; background-position: center;">
+          <div class="carousel-container">
+            <!-- <img src="assets/img/logotipo-1.png" alt=""> -->
+            <h2 class="animate__animated animate__fadeInDown">Compromisso com a Excelência</h2>
+            <p class="animate__animated animate__fadeInUp">
+              garantimos que cada caso seja tratado com a máxima atenção e profissionalismo.
+            </p>
+            <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">Entre em contato</a>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+      <!-- <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg> -->
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section  -->
+    <section id="about" class="about section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Sobre Nós</h2>
+        <p>Quem Somos</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              Na Jucá & Flexa Advogadas Associadas, somos uma equipe dedicada de profissionais do direito, comprometidas
+              em oferecer serviços jurídicos de alta qualidade, com foco em soluções eficazes e personalizadas para cada
+              cliente.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>Expertise em diversas áreas do direito, incluindo
+                  trabalhista, civil, empresarial complaice.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Abordagem centrada no cliente, construindo relações de
+                  confiança e oferecendo orientação clara.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Compromisso com a excelência e a ética, buscando sempre a
+                  justiça e a satisfação dos clientes.</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>Com anos de experiência, nos esforçamos para entender profundamente as necessidades de cada caso.
+              Acreditamos na importância de oferecer suporte contínuo em todas as etapas do processo legal. Na Jucá &
+              Flexa, cada caso é tratado com a máxima atenção e profissionalismo, refletindo nosso compromisso em
+              defender os direitos de nossos clientes com dedicação e integridade. </p>
+            <a href="#services" class="read-more"><span>Saiba mais</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+              <i class="bi bi-binoculars"></i>
+              <h4 class="d-none d-lg-block">Visão Estratégica</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+              <i class="bi bi-box-seam"></i>
+              <h4 class="d-none d-lg-block">Experiência Comprovada</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+              <i class="bi bi-brightness-high"></i>
+              <h4 class="d-none d-lg-block">Compromisso com a Justiça</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+              <i class="bi bi-command"></i>
+              <h4 class="d-none d-lg-block">Curiosidade: A Essência do Jucá</h4>
+            </a>
+          </li>
+        </ul><!-- End Tab Nav -->
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="features-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Visão Estratégica</h3>
+                <p class="fst-italic">
+                  Nossa abordagem estratégica é fundamentada em anos de experiência e conhecimento profundo do sistema
+                  jurídico.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i>
+                    <spab>Planejamento jurídico personalizado para cada cliente.</spab>
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> <span>Análise detalhada de cada caso para maximizar
+                      resultados.</span>.</li>
+                  <li><i class="bi bi-check2-all"></i> <span>Consultoria contínua para garantir decisões
+                      informadas.</span></li>
+                </ul>
+                <p>
+                  Compreendemos a importância de uma visão clara e objetiva para alcançar o sucesso em cada caso que
+                  assumimos.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Experiência Comprovada</h3>
+                <p class="fst-italic">
+                  A Dra. Cassandra traz mais de 20 anos de experiência como juíza, oferecendo uma perspectiva única e
+                  valiosa.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Conhecimento profundo das práticas judiciais.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Capacidade de prever e mitigar riscos legais.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Histórico comprovado de sucesso em litígios
+                      complexos.</span></li>
+                  <!-- <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
+                      fugiat nulla pariatur.</span></li> -->
+                </ul>
+                <p>
+                  Essa experiência nos permite antecipar desafios e navegar com eficácia no complexo ambiente jurídico.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Compromisso com a Justiça</h3>
+                <p class="fst-italic"> Nosso compromisso é com a justiça e a defesa dos direitos de nossos clientes,
+                  sempre com ética e
+                  integridade.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Defesa apaixonada e dedicada em cada caso.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Transparência e comunicação aberta com nossos
+                      clientes.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Resultados que refletem nosso compromisso com a
+                      excelência.</span></li>
+                </ul>
+                <p>
+                  Trabalhamos incansavelmente para garantir que cada cliente receba a representação que merece.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+
+          <div class="tab-pane fade" id="features-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Curiosidade: A Essência do Jucá</h3>
+                <p class="fst-italic">
+                  A fruta Jucá, que inspira nosso logotipo, é conhecida por suas propriedades únicas e simboliza a
+                  essência do nosso escritório.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>O Jucá é valorizado por sua resistência e adaptabilidade,
+                      qualidades que refletimos em nossa prática jurídica.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Assim como a fruta, nosso escritório é uma fonte de força e
+                      vitalidade para nossos clientes.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Incorporamos a essência do Jucá em nossa abordagem:
+                      robustez, resiliência e inovação.</span></li>
+                </ul>
+                <p>
+                  Essa conexão com o Jucá reforça nosso compromisso em oferecer soluções jurídicas eficazes e
+                  inovadoras.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End Tab Content Item -->
+        </div>
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+      <div class="container">
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-9 text-center text-xl-start">
+            <h3>Defenda Seus Direitos com Excelência</h3>
+            <p>Enfrente seus desafios legais com confiança. Nossa equipe de especialistas está pronta para oferecer a
+              representação que você merece, com dedicação e resultados comprovados. Não espere mais para garantir a
+              proteção dos seus interesses.</p>
+          </div>
+          <div class="col-xl-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#contact">Entre em Contato</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Call To Action Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Serviços</h2>
+        <p>O que oferecemos</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-cash-stack" style="color: #0dcaf0;"></i>
+              </div>
+              <!-- <a href="service-details.html" class="stretched-link"> -->
+                <h3>Direito Empresarial</h3>
+              </a>
+              <p>Oferecemos assessoria completa em direito empresarial, ajudando sua empresa a navegar pelas
+                complexidades legais com segurança e eficiência.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week" style="color: #fd7e14;"></i>
+              </div>
+              <!-- <a href="service-details.html" class="stretched-link"> -->
+                <h3>Direito Trabalhista</h3>
+              </a>
+              <p>Defendemos os direitos de empregadores e empregados, garantindo que as relações de trabalho sejam
+                justas e dentro da legalidade.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-text" style="color: #20c997;"></i>
+              </div>
+              <!-- <a href="service-details.html" class="stretched-link"> -->
+                <h3>Consultoria Jurídica</h3>
+              </a>
+              <p>Nossa equipe oferece consultoria jurídica personalizada, ajudando você a tomar decisões informadas e
+                estratégicas para o seu negócio ou situação pessoal.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-credit-card-2-front" style="color: #df1529;"></i>
+              </div>
+              <!-- <a href="service-details.html" class="stretched-link"> -->
+                <h3>Direito Civil</h3>
+              </a>
+              <p>Atuamos em diversas áreas do direito civil, oferecendo soluções jurídicas para questões contratuais, de
+                família, e de responsabilidade civil.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-globe" style="color: #6610f2;"></i>
+              </div>
+              <!-- <a href="service-details.html" class="stretched-link"> -->
+                <h3>Direito Internacional</h3>
+              </a>
+              <p>Com expertise em direito internacional, auxiliamos empresas e indivíduos em transações e litígios
+                além-fronteiras.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-clock" style="color: #f3268c;"></i>
+              </div>
+              <!-- <a href="service-details.html" class="stretched-link"> -->
+                <h3>Compliance</h3>
+              </a>
+              <p>Desenvolvemos e implementamos programas de compliance robustos, garantindo que sua empresa esteja em
+                conformidade com leis e regulamentos, mitigando riscos e fortalecendo a integridade corporativa.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Portfolio Section 
+    <section id="portfolio" class="portfolio section"> -->
+
+    <!-- Section Title 
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>What we've done</p>
+      </div>
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Card</li>
+            <li data-filter=".filter-branding">Web</li>
+          </ul>
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Product 1</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Branding 1</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 2</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Product 2</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Branding 2</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 3</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Product 3</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Branding 3</h4>
+                <p>Lorem ipsum, dolor sit</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div> 
+            </div>
+          </div>
+
+        </div>
+
+      </div> 
+
+    </section> -->
+
+    <!-- /Portfolio Section 
+
+    <section id="testimonials" class="testimonials section">
+
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>What they are saying about us</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 10
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+    
+    <section id="pricing" class="pricing section">
+
+      
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>What they are saying about us</p>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-3">
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3>Business</h3>
+              <h4><sup>$</sup>19<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="pricing-item">
+              <h3>Developer</h3>
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="pricing-item">
+              <span class="advanced">Advanced</span>
+              <h3>Ultimate</h3>
+              <h4><sup>$</sup>49<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div> 
+
+    </section>-->
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Equipe</h2>
+        <p>Conheça Nossa equipe</p>
+      </div><!-- End Section Title -->
+      <div class="container">
+
+        <!-- Centering the team members -->
+        <div class="row justify-content-center gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dra. Cassandra Jucá</h4>
+                <span>Advogada</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dra. Larisse</h4>
+                <span>Advogada</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-whatsapp"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dra. Nathália Guedes</h4>
+                <span>Advogada</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+        </div>
+      </div>
+    </section><!-- End Team Section -->
+    <!-- /Team Section -->
+
+    <!--######### EXCLUIR ######## 
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Postagens Recentes</h2>
+        <p>Blog<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Direito Empresarial</p>
+
+              <h2 class="title">
+                <a href="blog-details.html" target="_blank">Estratégias Legais para Pequenas Empresas</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">Cassandra Jucá</p>
+                  <p class="post-date">
+                    <time datetime="2024-01-01">Jan 1, 2024</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Tecnologia e Direito</p>
+
+              <h2 class="title">
+                <a href="blog-details.html" target="_blank">Impacto das Novas Tecnologias no Setor Jurídico</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">Cassandra Jucá</p>
+                  <p class="post-date">
+                    <time datetime="2024-01-01">Jan 1, 2024</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Compliance</p>
+
+              <h2 class="title">
+                <a href="blog-details.html">A Importância do Compliance nas Empresas Modernas</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">Cassandra Jucá</p>
+                  <p class="post-date">
+                    <time datetime="2024-01-01">Jan 1, 2024</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+        </div><!-- End recent posts list -->
+
+      </div>
+
+    </section><!-- /Recent Posts Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>FAQ</h2>
+        <p>Perguntas Frequentes</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12">
+            <div class="custom-accordion" id="accordion-faq">
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1">
+                    Como posso agendar uma consultoria?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-1" class="collapse show" aria-labelledby="headingOne"
+                  data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    Para agendar uma consultoria, você pode entrar em contato conosco pelo telefone ou e-mail
+                    disponíveis
+                    em nossa página de contato. Também oferecemos a opção de agendamento online através do nosso site,
+                    onde você pode escolher a data e horário que melhor se adequam à sua agenda.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-faq-2">
+                    Quais são as áreas de atuação do escritório?
+                  </button>
+                </h2>
+                <div id="collapse-faq-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    Nosso escritório atua em diversas áreas do direito, incluindo direito civil, trabalhista,
+                    empresarial e tributário. Nossa equipe é composta por especialistas em cada uma dessas áreas,
+                    garantindo um atendimento completo e personalizado para cada cliente.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-faq-3">
+                    Como funciona o processo de consultoria jurídica?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    Nosso processo de consultoria jurídica começa com uma análise detalhada das necessidades do cliente.
+                    Em seguida, oferecemos orientações e soluções personalizadas para cada caso, sempre com o objetivo
+                    de proteger os interesses do cliente e garantir o cumprimento das normas legais.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-faq-4">
+                    Quais são os horários de atendimento?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-4" class="collapse" aria-labelledby="headingFour" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    Nosso escritório está aberto de segunda a sexta-feira, das 9h às 18h. Para atendimentos fora desse
+                    horário, é necessário agendar previamente. Estamos comprometidos em oferecer flexibilidade para
+                    atender às necessidades dos nossos clientes.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contato</h2>
+        <p>Entre em Contato Conosco</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Endereço</h3>
+                <p>Zion Business, Belém, Pará</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Telefone</h3>
+                <p>+55 91 1234 5678</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@example.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <!-- Google Map Embed -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5456355893!2d-48.486456289528554!3d-1.4472149358169273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48ea4fc46b53f%3A0xa8effcb98c9c076!2sZion%20Business!5e0!3m2!1spt-PT!2sbr!4v1731646004207!5m2!1spt-PT!2sbr"
+              width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+         
+        </div>
+
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <img src="assets/img/logotipo-2.png" alt="Logotipo Jucá&Flexa" class="footer-logo mb-2">
+            <div class="text-container">
+              <h1 class="sitename">Jucá&Flexa</h1>
+              <p class="subtitle">Advogadas Associadas</p>
+            </div>
+          </a>
+          <div class="footer-contact pt-3">
+            <p class="mt-3"><i class="bi bi-whatsapp"></i> <span>(91) 9xxxx-xxxx</span></p>
+            <p><i class="bi bi-envelope"></i> <span>exemplo@jucaflexa.adv.br</span></p>
+            <p><i class="bi bi-geo-alt"></i> <span>Zion Business, Belém, Pará</span></p>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Mapa do Site</h4>
+          <ul>
+            <li><a href="#hero">Ínicio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 footer-social">
+          <h4>Siga-nos</h4>
+          <p>Siga-nos nas redes sociais para atualizações legais e novidades do escritório.</p>
+          <div class="social-links d-flex">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container copyright text-center mt-4">
+      <p>© <span>2024 Copyright <strong>Sena</strong>.</span> <span>Todos os Direitos Reservados</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
