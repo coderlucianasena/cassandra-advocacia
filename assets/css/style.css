@@ -472,11 +472,11 @@ section {
 }
 
 .carousel-item {
-  background-size: cover; /* A imagem cobre a área disponível */
+  background-size: cover;
   background-position: center;
-  min-height: 75vh; /* Define a altura da imagem */
-  width: 120%; /* Aumenta apenas a largura da imagem */
-  left: -10%; /* Ajusta a imagem para que ela fique centralizada */
+  min-height: 75vh;
+  width: 120%;
+  left: -10%;
 }
 
 .hero h2 {
@@ -529,8 +529,6 @@ section {
   color: var(--contrast-color);
   text-decoration: none;
 }
-
-
 
 .hero .hero-waves {
   display: block;
@@ -2448,78 +2446,54 @@ section {
   .mobile-nav-active .navmenu > ul {
     display: block;
   }
-}
 
-/* Estilos adicionais para diferentes tamanhos de tela */
-@media (max-width: 768px) {
-  .footer .footer-top .row > div {
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero p {
-    max-width: 60%;
-  }
-
-  .hero .carousel-control-prev,
-  .hero .carousel-control-next {
-    width: 5%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero .carousel-container {
-    min-height: 90vh;
+  .carousel-item {
+    min-height: 60vh;
   }
 
   .hero h2 {
-    font-size: 28px;
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }
 
-@media (max-width: 768px) {
-  .features .nav-link i {
-    padding: 0;
-    line-height: 1;
+/* Media queries específicas para ajustar o hero e o carrossel */
+@media (max-width: 991px) {
+  .carousel-item {
+    min-height: 50vh;
+  }
+
+  .hero h2 {
     font-size: 36px;
   }
-}
 
-@media (max-width: 575px) {
-  .features .nav-link {
-    padding: 15px;
-  }
-
-  .features .nav-link i {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1365px) {
-  .services .service-item:hover {
-    transform: translateY(-10px);
-  }
-
-  .services .service-item:hover h3 {
-    color: var(--accent-color);
-  }
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 0 10px 0;
+  .hero p {
+    font-size: 15px;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 767px) {
+  .carousel-item {
+    min-height: 40vh;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    max-width: 95%;
+  }
+
+  .hero .carousel-container {
+    padding-top: 40px;
+  }
+
   .testimonials .testimonial-wrap {
     padding-left: 0;
   }
@@ -2536,9 +2510,112 @@ section {
 }
 
 @media (max-width: 575px) {
+  .carousel-item {
+    min-height: 30vh;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero .btn-get-started {
+    font-size: 12px;
+    padding: 10px 24px;
+  }
+
+  .features .nav-link {
+    padding: 15px;
+  }
+
+  .features .nav-link i {
+    font-size: 24px;
+  }
+
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+
   .portfolio-details .swiper-button-prev,
   .portfolio-details .swiper-button-next {
     display: none;
   }
 }
 
+/* Estilos adicionais para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+  .footer .footer-top .row > div {
+    margin-bottom: 30px;
+  }
+
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+
+  .hero .carousel-container {
+    min-height: 90vh;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .features .nav-link i {
+    padding: 0;
+    line-height: 1;
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero p {
+    max-width: 60%;
+  }
+
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+@media (min-width: 1365px) {
+  .services .service-item:hover {
+    transform: translateY(-10px);
+  }
+
+  .services .service-item:hover h3 {
+    color: var(--accent-color);
+  }
+}
+
+/* Ajuste específico para telas com largura de 430px ou menos */
+@media (max-width: 430px) {
+  .hero .carousel-container {
+    min-height: 80vh; /* Reduzindo um pouco a altura mínima */
+    padding-top: 30px; /* Reduzindo o padding superior */
+  }
+
+  .hero h2 {
+    font-size: 20px; /* Reduzindo ainda mais o tamanho da fonte */
+    margin-bottom: 15px; /* Reduzindo o espaço abaixo do título */
+  }
+
+  .hero p {
+    font-size: 12px; /* Reduzindo o tamanho da fonte do parágrafo */
+    max-width: 100%; /* Permitindo que o texto ocupe toda a largura disponível */
+    margin-bottom: 20px; /* Reduzindo o espaço abaixo do parágrafo */
+  }
+
+  .hero .btn-get-started {
+    font-size: 11px; /* Reduzindo o tamanho da fonte do botão */
+    padding: 8px 20px; /* Ajustando o padding do botão */
+  }
+
+  .carousel-item {
+    min-height: 25vh; /* Reduzindo a altura mínima do item do carrossel */
+  }
+}
