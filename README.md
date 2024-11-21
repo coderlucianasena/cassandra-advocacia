@@ -1,2 +1,2 @@
 # cassandra-advocacia
-Este projeto representa o desenvolvimento do site para o escritório de advocacia "Juca Advocacia". Criado para melhorar a presença online do escritório, o site oferece uma plataforma intuitiva e informativa para clientes e visitantes, destacando os serviços jurídicos oferecidos e compartilhando conteúdos relevantes através de um blog.
+Este site está sendo desenvolvido para o escritório de advocacia "Juca e Flexa Advogadas Associadas". O site tem como objetivo melhorar a presença online do escritório, oferecendo uma plataforma intuitiva e informativa. Ele destaca os serviços jurídicos disponíveis e compartilha conteúdos relevantes por meio de um blog, facilitando o acesso às informações para clientes e visitantes.
