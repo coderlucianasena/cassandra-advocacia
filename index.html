@@ -10,7 +10,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var title = "Jucá Flexa Advogadas Associadas";
-      var speed = 200; 
+      var speed = 200;
       var index = 0;
       var isScrolling = true;
 
@@ -19,8 +19,8 @@
           document.title = title.substring(index) + " " + title.substring(0, index);
           index++;
           if (index > title.length) {
-            isScrolling = false; 
-            setTimeout(resetTitle, 2000); 
+            isScrolling = false;
+            setTimeout(resetTitle, 2000);
           } else {
             setTimeout(scrollTitle, speed);
           }
@@ -28,10 +28,10 @@
       }
 
       function resetTitle() {
-        document.title = title; 
+        document.title = title;
         index = 0;
         isScrolling = true;
-        setTimeout(scrollTitle, 2000); 
+        setTimeout(scrollTitle, 2000);
       }
 
       scrollTitle();
@@ -67,7 +67,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/LogoH2.png" alt="">
+        <img src="assets/img/LogoH2.png" alt="Jucá Flexa Advogadas">
         <div class="text-container">
           <!-- <h1 class="sitename">Jucá Flexa</h1>
           <p>Advogadas Associadas</p> -->
@@ -76,21 +76,15 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <!-- <div class="social-links d-flex justify-content-center">
-            <a href=""><i class="bi bi-whatsapp"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div> -->
           <li><a href="#hero" class="active">Início</a></li>
           <li><a href="#about">Sobre</a></li>
-          <li><a href="#services">Serviços</a></li> 
+          <li><a href="#services">Serviços</a></li>
           <li><a href="#team">Equipe</a></li>
           <li><a href="#recent-posts">Blog</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contato</a></li>
+          <li><a href="links-uteis.html" class="cta-button" target="_blank" rel="noopener">Links úteis</a></li>
         </ul>
-
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
@@ -100,75 +94,31 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <div id="hero-carousel" data-bs-interval="5000" class="hero-carousel container carousel carousel-fade" data-bs-ride="carousel">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active"
-          style="background-image: url('/assets/img/home/1.png'); background-size: cover; background-position: center;">
-          <div class="carousel-container">
-            <h2 class="animate__animated animate__fadeInDown">Seja Bem-vindo(a) à <br><span>Jucá Flexa Advogadas
-                Associadas</span></h2>
-            <p class="animate__animated animate__fadeInUp">
-              Defendemos seus direitos com dedicação e expertise.
-            </p>
-            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sobre nós</a>
+    <section id="hero" class="hero section dark-background"
+      style="background-image: url('assets/img/home/3.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="hero-content-container">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown" style="color: #D8C8B4;">Seja Bem-vindo(a) à <br><span
+              style="font-weight:700; letter-spacing:0.5px;">Jucá Flexa Advogadas Associadas</span></h2>
+          <p class="animate__animated animate__fadeInUp" style="color: #D8C8B4;">
+            Defendemos seus direitos com dedicação e expertise.
+          </p>
+          <a href="#contact" class="btn-get-started nav-btn-home animate__animated animate__fadeInUp scrollto">Entre em
+            contato</a>
+          <div class="scroll-down-arrow text-center" style="margin-top: 12px;">
+            <!-- Mouse SVG animado -->
+            <svg class="mouse-scroll" width="32" height="48" viewBox="0 0 32 48" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="24" height="40" rx="12" stroke="#D8C8B4" stroke-width="3" fill="none" />
+              <circle class="mouse-wheel" cx="16" cy="14" r="3" fill="#D8C8B4">
+                <animate attributeName="cy" values="14;28;14" dur="1.4s" repeatCount="indefinite" />
+              </circle>
+            </svg>
+            <div style="font-size: 0.9rem; color: #D8C8B4; margin-top: 2px;">Role para baixo</div>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item"
-          style="background-image: url('/assets/img/home/2.png'); background-size: cover; background-position: center;">
-          <div class="carousel-container">
-            <!-- <img src="assets/img/logotipo-1.png" alt=""> -->
-            <h2 class="animate__animated animate__fadeInDown">Especialistas em Direito Trabalhista</h2>
-            <p class="animate__animated animate__fadeInUp">
-              Nossa equipe está preparada para oferecer soluções jurídicas <br> eficazes e personalizadas para cada cliente.
-            </p>
-            <a href="#team" class="btn-get-started animate__animated animate__fadeInUp scrollto">Equipe</a>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item"
-          style="background-image: url('/assets/img/home/3.png'); background-size: cover; background-position: center;">
-          <div class="carousel-container">
-            <!-- <img src="assets/img/logotipo-1.png" alt=""> -->
-            <h2 class="animate__animated animate__fadeInDown">Compromisso com a Excelência</h2>
-            <p class="animate__animated animate__fadeInUp">
-              Garantimos que cada caso seja tratado <br> com a máxima atenção e profissionalismo.
-            </p>
-            <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">Entre em contato</a>
-          </div>
-        </div>
-
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
       </div>
-
-      <!-- <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-        <defs>
-          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-        </defs>
-        <g class="wave1">
-          <use xlink:href="#wave-path" x="50" y="3"></use>
-        </g>
-        <g class="wave2">
-          <use xlink:href="#wave-path" x="50" y="0"></use>
-        </g>
-        <g class="wave3">
-          <use xlink:href="#wave-path" x="50" y="9"></use>
-        </g>
-      </svg> -->
-
-    </section><!-- /Hero Section -->
+    </section>
 
     <!-- About Section  -->
     <section id="about" class="about section">
@@ -198,7 +148,8 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <p>Com anos de experiência, nos esforçamos para entender profundamente as necessidades de cada caso.
-              Acreditamos na importância de oferecer suporte contínuo em todas as etapas do processo legal. Na Jucá Flexa, cada caso é tratado com a máxima atenção e profissionalismo, refletindo nosso compromisso em
+              Acreditamos na importância de oferecer suporte contínuo em todas as etapas do processo legal. Na Jucá
+              Flexa, cada caso é tratado com a máxima atenção e profissionalismo, refletindo nosso compromisso em
               defender os direitos de nossos clientes com dedicação e integridade. </p>
             <a href="#services" class="read-more"><span>Saiba mais</span><i class="bi bi-arrow-right"></i></a>
           </div>
@@ -389,7 +340,7 @@
                 <i class="bi bi-cash-stack" style="color: #0dcaf0;"></i>
               </div>
               <!-- <a href="service-details.html" class="stretched-link"> -->
-                <h3>Direito Empresarial</h3>
+              <h3>Direito Empresarial</h3>
               </a>
               <p>Oferecemos assessoria completa em direito empresarial, ajudando sua empresa a navegar pelas
                 complexidades legais com segurança e eficiência.</p>
@@ -402,7 +353,7 @@
                 <i class="bi bi-calendar4-week" style="color: #fd7e14;"></i>
               </div>
               <!-- <a href="service-details.html" class="stretched-link"> -->
-                <h3>Direito Trabalhista</h3>
+              <h3>Direito Trabalhista</h3>
               </a>
               <p>Defendemos os direitos de empregadores e empregados, garantindo que as relações de trabalho sejam
                 justas e dentro da legalidade.</p>
@@ -415,7 +366,7 @@
                 <i class="bi bi-chat-text" style="color: #20c997;"></i>
               </div>
               <!-- <a href="service-details.html" class="stretched-link"> -->
-                <h3>Consultoria Jurídica</h3>
+              <h3>Consultoria Jurídica</h3>
               </a>
               <p>Nossa equipe oferece consultoria jurídica personalizada, ajudando você a tomar decisões informadas e
                 estratégicas para o seu negócio ou situação pessoal.</p>
@@ -428,7 +379,7 @@
                 <i class="bi bi-credit-card-2-front" style="color: #df1529;"></i>
               </div>
               <!-- <a href="service-details.html" class="stretched-link"> -->
-                <h3>Direito Civil</h3>
+              <h3>Direito Civil</h3>
               </a>
               <p>Atuamos em diversas áreas do direito civil, oferecendo soluções jurídicas para questões contratuais, de
                 família, e de responsabilidade civil.</p>
@@ -441,7 +392,7 @@
                 <i class="bi bi-globe" style="color: #6610f2;"></i>
               </div>
               <!-- <a href="service-details.html" class="stretched-link"> -->
-                <h3>Direito Internacional</h3>
+              <h3>Direito Internacional</h3>
               </a>
               <p>Com expertise em direito internacional, auxiliamos empresas e indivíduos em transações e litígios
                 além-fronteiras.</p>
@@ -454,7 +405,7 @@
                 <i class="bi bi-clock" style="color: #f3268c;"></i>
               </div>
               <!-- <a href="service-details.html" class="stretched-link"> -->
-                <h3>Compliance</h3>
+              <h3>Compliance</h3>
               </a>
               <p>Desenvolvemos e implementamos programas de compliance robustos, garantindo que sua empresa esteja em
                 conformidade com leis e regulamentos, mitigando riscos e fortalecendo a integridade corporativa.</p>
@@ -1107,7 +1058,7 @@
               width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-         
+
         </div>
 
       </div>
@@ -1132,7 +1083,7 @@
             <p><i class="bi bi-geo-alt"></i> <span>Zion Business, Belém, Pará</span></p>
           </div>
         </div>
-  
+
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Mapa do Site</h4>
           <ul>
@@ -1143,7 +1094,7 @@
             <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
-  
+
         <div class="col-lg-3 col-md-6 footer-social">
           <h4>Siga-nos</h4>
           <p>Siga-nos nas redes sociais para atualizações legais e novidades do escritório.</p>
@@ -1156,7 +1107,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="container copyright text-center mt-4">
       <p>© <span>2024 Copyright <strong>Sena</strong>.</span> <span>Todos os Direitos Reservados</span></p>
     </div>

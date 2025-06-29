@@ -15,27 +15,100 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
-   * Mobile nav toggle
+   * Mobile nav toggle - VERSÃO CORRIGIDA
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+    const body = document.querySelector('body');
+    const navmenu = document.querySelector('.navmenu');
+    
+    // Toggle da classe no body
+    body.classList.toggle('mobile-nav-active');
+    
+    // Toggle dos ícones do botão
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    
+    // Previne scroll do body quando menu está aberto
+    if (body.classList.contains('mobile-nav-active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = '';
+    }
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+  // Event listener para o botão de toggle
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
 
   /**
-   * Hide mobile nav on same-page/hash links
+   * Hide mobile nav on same-page/hash links - MELHORADO
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
+    navmenu.addEventListener('click', (e) => {
+      const body = document.querySelector('body');
+      
+      // Se o menu mobile está ativo, fecha ele
+      if (body.classList.contains('mobile-nav-active')) {
         mobileNavToogle();
       }
+      
+      // Se for um link âncora, adiciona scroll suave
+      const href = navmenu.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
     });
+  });
 
+  /**
+   * Fecha o menu mobile ao clicar fora dele
+   */
+  document.addEventListener('click', (e) => {
+    const body = document.querySelector('body');
+    const navmenu = document.querySelector('.navmenu');
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    
+    // Se o menu está aberto e o clique foi fora do menu e do botão
+    if (body.classList.contains('mobile-nav-active')) {
+      if (!navmenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        mobileNavToogle();
+      }
+    }
+  });
+
+  /**
+   * Fecha o menu mobile ao pressionar ESC
+   */
+  document.addEventListener('keydown', (e) => {
+    const body = document.querySelector('body');
+    
+    if (e.key === 'Escape' && body.classList.contains('mobile-nav-active')) {
+      mobileNavToogle();
+    }
+  });
+
+  /**
+   * Fecha o menu mobile ao redimensionar a tela para desktop
+   */
+  window.addEventListener('resize', () => {
+    const body = document.querySelector('body');
+    
+    if (window.innerWidth >= 1200 && body.classList.contains('mobile-nav-active')) {
+      body.classList.remove('mobile-nav-active');
+      body.style.overflow = '';
+      mobileNavToggleBtn.classList.add('bi-list');
+      mobileNavToggleBtn.classList.remove('bi-x');
+    }
   });
 
   /**
@@ -70,13 +143,16 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -85,21 +161,25 @@
    * Animation on scroll function and init
    */
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
   }
   window.addEventListener('load', aosInit);
 
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init isotope layout and filters
@@ -110,45 +190,48 @@
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+    if (typeof imagesLoaded !== 'undefined' && typeof Isotope !== 'undefined') {
+      imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+        initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+          itemSelector: '.isotope-item',
+          layoutMode: layout,
+          filter: filter,
+          sortBy: sort
         });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
+      });
 
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+        filters.addEventListener('click', function() {
+          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          this.classList.add('filter-active');
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+          if (typeof aosInit === 'function') {
+            aosInit();
+          }
+        }, false);
+      });
+    }
   });
 
   /**
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+    if (typeof Swiper !== 'undefined') {
+      document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+        let config = JSON.parse(
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
+        );
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
+        if (swiperElement.classList.contains("swiper-tab")) {
+          initSwiperWithCustomPagination(swiperElement, config);
+        } else {
+          new Swiper(swiperElement, config);
+        }
+      });
+    }
   }
 
   window.addEventListener("load", initSwiper);
