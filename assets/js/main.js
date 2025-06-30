@@ -15,103 +15,6 @@
   window.addEventListener('load', toggleScrolled);
 
   /**
-   * Mobile nav toggle - VERSÃO CORRIGIDA
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    const body = document.querySelector('body');
-    const navmenu = document.querySelector('.navmenu');
-    
-    // Toggle da classe no body
-    body.classList.toggle('mobile-nav-active');
-    
-    // Toggle dos ícones do botão
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-    
-    // Previne scroll do body quando menu está aberto
-    if (body.classList.contains('mobile-nav-active')) {
-      body.style.overflow = 'hidden';
-    } else {
-      body.style.overflow = '';
-    }
-  }
-
-  // Event listener para o botão de toggle
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-  }
-
-  /**
-   * Hide mobile nav on same-page/hash links - MELHORADO
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', (e) => {
-      const body = document.querySelector('body');
-      
-      // Se o menu mobile está ativo, fecha ele
-      if (body.classList.contains('mobile-nav-active')) {
-        mobileNavToogle();
-      }
-      
-      // Se for um link âncora, adiciona scroll suave
-      const href = navmenu.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const targetSection = document.querySelector(href);
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    });
-  });
-
-  /**
-   * Fecha o menu mobile ao clicar fora dele
-   */
-  document.addEventListener('click', (e) => {
-    const body = document.querySelector('body');
-    const navmenu = document.querySelector('.navmenu');
-    const mobileToggle = document.querySelector('.mobile-nav-toggle');
-    
-    // Se o menu está aberto e o clique foi fora do menu e do botão
-    if (body.classList.contains('mobile-nav-active')) {
-      if (!navmenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        mobileNavToogle();
-      }
-    }
-  });
-
-  /**
-   * Fecha o menu mobile ao pressionar ESC
-   */
-  document.addEventListener('keydown', (e) => {
-    const body = document.querySelector('body');
-    
-    if (e.key === 'Escape' && body.classList.contains('mobile-nav-active')) {
-      mobileNavToogle();
-    }
-  });
-
-  /**
-   * Fecha o menu mobile ao redimensionar a tela para desktop
-   */
-  window.addEventListener('resize', () => {
-    const body = document.querySelector('body');
-    
-    if (window.innerWidth >= 1200 && body.classList.contains('mobile-nav-active')) {
-      body.classList.remove('mobile-nav-active');
-      body.style.overflow = '';
-      mobileNavToggleBtn.classList.add('bi-list');
-      mobileNavToggleBtn.classList.remove('bi-x');
-    }
-  });
-
-  /**
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
@@ -275,5 +178,256 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  // ===== TÍTULO ANIMADO (apenas para index.html) =====
+  if (document.body.classList.contains('index-page') || window.location.pathname.endsWith('index.html')) {
+    document.addEventListener("DOMContentLoaded", function () {
+      var title = "Jucá Flexa Advogadas Associadas";
+      var speed = 200;
+      var index = 0;
+      var isScrolling = true;
+
+      function scrollTitle() {
+        if (isScrolling) {
+          document.title = title.substring(index) + " " + title.substring(0, index);
+          index++;
+          if (index > title.length) {
+            isScrolling = false;
+            setTimeout(resetTitle, 2000);
+          } else {
+            setTimeout(scrollTitle, speed);
+          }
+        }
+      }
+
+      function resetTitle() {
+        document.title = title;
+        index = 0;
+        isScrolling = true;
+        setTimeout(scrollTitle, 2000);
+      }
+
+      scrollTitle();
+    });
+  }
+
+})();
+
+// ===========================================
+// CORREÇÕES MOBILE PARA main.js
+// Adicionar ao arquivo main.js existente
+// ===========================================
+
+// Substituir ou adicionar as seguintes funções no main.js:
+
+(function() {
+  "use strict";
+
+  // ===== INICIALIZAÇÃO DE VIEWPORT HEIGHT PARA MOBILE =====
+  function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  // Inicializar no carregamento e mudanças de orientação
+  setViewportHeight();
+  window.addEventListener('resize', setViewportHeight);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(setViewportHeight, 100); // Pequeno delay para aguardar mudança
+  });
+
+  // ===== MOBILE NAV TOGGLE =====
+  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  function mobileNavToogle() {
+    const body = document.querySelector('body');
+    const navmenu = document.querySelector('.navmenu');
+    const header = document.querySelector('.header');
+    body.classList.toggle('mobile-nav-active');
+    mobileNavToggleBtn.classList.toggle('bi-list');
+    mobileNavToggleBtn.classList.toggle('bi-x');
+    if (body.classList.contains('mobile-nav-active')) {
+      body.style.overflow = 'hidden';
+      if (header) header.style.zIndex = '10000';
+    } else {
+      body.style.overflow = '';
+      if (header) header.style.zIndex = '';
+    }
+  }
+
+  // Event listener para o botão de toggle
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
+
+  // ===== FECHAR MENU MOBILE EM VÁRIAS SITUAÇÕES =====
+  document.querySelectorAll('#navmenu a').forEach(navmenu => {
+    navmenu.addEventListener('click', (e) => {
+      const body = document.querySelector('body');
+      if (body.classList.contains('mobile-nav-active')) {
+        mobileNavToogle();
+      }
+      const href = navmenu.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          setTimeout(() => {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = targetSection.offsetTop - headerHeight - 20;
+            window.scrollTo({
+              top: Math.max(0, targetPosition),
+              behavior: 'smooth'
+            });
+          }, 300);
+        }
+      }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    const body = document.querySelector('body');
+    const navmenu = document.querySelector('.navmenu');
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const header = document.querySelector('.header');
+    if (body.classList.contains('mobile-nav-active')) {
+      if (!navmenu.contains(e.target) && !mobileToggle.contains(e.target) && !header.contains(e.target)) {
+        mobileNavToogle();
+      }
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    const body = document.querySelector('body');
+    if (e.key === 'Escape' && body.classList.contains('mobile-nav-active')) {
+      mobileNavToogle();
+    }
+  });
+  function handleScreenChange() {
+    const body = document.querySelector('body');
+    if (window.innerWidth >= 1200 && body.classList.contains('mobile-nav-active')) {
+      body.classList.remove('mobile-nav-active');
+      body.style.overflow = '';
+      mobileNavToggleBtn.classList.add('bi-list');
+      mobileNavToggleBtn.classList.remove('bi-x');
+      const header = document.querySelector('.header');
+      if (header) header.style.zIndex = '';
+    }
+  }
+  window.addEventListener('resize', handleScreenChange);
+  window.addEventListener('orientationchange', () => {
+    const body = document.querySelector('body');
+    if (body.classList.contains('mobile-nav-active')) {
+      mobileNavToogle();
+    }
+    setTimeout(() => { setViewportHeight(); }, 100);
+  });
+
+  // ===== SCROLL HEADER MELHORADO =====
+  function toggleScrolled() {
+    const selectBody = document.querySelector('body');
+    const selectHeader = document.querySelector('#header');
+    if (!selectHeader) return;
+    if (!selectHeader.classList.contains('scroll-up-sticky') &&
+        !selectHeader.classList.contains('sticky-top') &&
+        !selectHeader.classList.contains('fixed-top')) return;
+    const threshold = window.innerWidth <= 768 ? 30 : 100;
+    if (window.scrollY > threshold) {
+      selectBody.classList.add('scrolled');
+      if (window.innerWidth <= 1199) {
+        selectHeader.style.background = 'rgba(81, 28, 37, 0.98)';
+      }
+    } else {
+      selectBody.classList.remove('scrolled');
+      if (window.innerWidth <= 1199) {
+        selectHeader.style.background = 'rgba(81, 28, 37, 0.95)';
+      }
+    }
+  }
+  document.addEventListener('scroll', toggleScrolled);
+  window.addEventListener('load', toggleScrolled);
+
+  // ===== SMOOTH SCROLL MELHORADO =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const header = document.querySelector('.header');
+          const headerHeight = header ? header.offsetHeight : 80;
+          const offset = window.innerWidth <= 768 ? 10 : 20;
+          const targetPosition = target.offsetTop - headerHeight - offset;
+          window.scrollTo({
+            top: Math.max(0, targetPosition),
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  // ===== PREVENÇÃO DE BOUNCE SCROLL NO IOS =====
+  document.addEventListener('touchmove', function(e) {
+    const body = document.querySelector('body');
+    if (body.classList.contains('mobile-nav-active')) {
+      const navmenu = document.querySelector('.navmenu ul');
+      if (navmenu && !navmenu.contains(e.target)) {
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  // ===== ANIMAÇÕES HERO MOBILE =====
+  function initHeroAnimations() {
+    if (window.innerWidth <= 768) {
+      const heroElements = document.querySelectorAll('.hero h2, .hero p, .hero .btn-get-started');
+      heroElements.forEach((element, index) => {
+        if (element) {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(30px)';
+          setTimeout(() => {
+            element.style.transition = 'all 0.8s ease-out';
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }, 300 + (index * 200));
+        }
+      });
+    }
+  }
+  window.addEventListener('load', () => {
+    setTimeout(initHeroAnimations, 500);
+  });
+
+  // ===== DEBOUNCE =====
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+  const debouncedScreenChange = debounce(handleScreenChange, 250);
+  const debouncedViewportHeight = debounce(setViewportHeight, 250);
+  window.addEventListener('resize', debouncedScreenChange);
+  window.addEventListener('resize', debouncedViewportHeight);
+
+  // ===== FIX IOS VIEWPORT =====
+  function iosViewportFix() {
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      const iosVh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${iosVh}px`);
+      window.addEventListener('resize', () => {
+        if (document.activeElement.tagName !== 'INPUT' &&
+            document.activeElement.tagName !== 'TEXTAREA') {
+          const newVh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${newVh}px`);
+        }
+      });
+    }
+  }
+  iosViewportFix();
 
 })();

@@ -3,40 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
   <title>Jucá Flexa Advogadas Associadas</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var title = "Jucá Flexa Advogadas Associadas";
-      var speed = 200;
-      var index = 0;
-      var isScrolling = true;
-
-      function scrollTitle() {
-        if (isScrolling) {
-          document.title = title.substring(index) + " " + title.substring(0, index);
-          index++;
-          if (index > title.length) {
-            isScrolling = false;
-            setTimeout(resetTitle, 2000);
-          } else {
-            setTimeout(scrollTitle, speed);
-          }
-        }
-      }
-
-      function resetTitle() {
-        document.title = title;
-        index = 0;
-        isScrolling = true;
-        setTimeout(scrollTitle, 2000);
-      }
-
-      scrollTitle();
-    });
-  </script>
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/favicon.png" rel="apple-touch-icon">
@@ -1130,6 +1100,46 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  
+  <script>
+  // Script específico para correções mobile - executar imediatamente
+  (function() {
+    "use strict";
+    
+    // Fix viewport height inicial
+    function setInitialViewportHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    // Executar imediatamente
+    setInitialViewportHeight();
+    
+    // Garantir que o header tenha z-index correto desde o início
+    const header = document.querySelector('.header');
+    if (header && window.innerWidth <= 1199) {
+      header.style.zIndex = '10000';
+    }
+    
+    // Prevenir flash de conteúdo não estilizado
+    document.addEventListener('DOMContentLoaded', function() {
+      setInitialViewportHeight();
+      
+      // Garantir que elementos mobile estejam corretos
+      const mobileToggle = document.querySelector('.mobile-nav-toggle');
+      if (mobileToggle && window.innerWidth <= 1199) {
+        mobileToggle.style.display = 'flex';
+      }
+    });
+    
+    // Fix para mudanças de orientação
+    window.addEventListener('orientationchange', function() {
+      setTimeout(setInitialViewportHeight, 100);
+    });
+    
+  })();
+  </script>
 
 </body>
 
