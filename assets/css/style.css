@@ -176,9 +176,16 @@ h6 {
 
 
 .footer .footer-about .footer-logo {
-  max-width: 50px; 
-  margin-right: 5px;
-  margin-left: -10px;
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+@media (max-width: 600px) {
+  .footer .footer-about .footer-logo {
+    max-width: 250px;
+  }
 }
 
 .footer .footer-about .text-container {
@@ -4128,5 +4135,48 @@ body.links-uteis-page {
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
     box-shadow: 0 4px 20px rgba(81, 28, 37, 0.3), 0 1px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+}
+
+/* Centralização responsiva para links-uteis.html */
+body.links-uteis-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.area-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  max-width: 600px;
+  width: 100%;
+  padding: 36px 32px 28px 32px;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .area-container {
+    max-width: 98vw;
+    padding: 18px 8px 16px 8px;
+    border-radius: 12px;
+  }
+}
+
+/* Footer logo super grande (até 420px desktop, 240px mobile) */
+.footer .footer-logo {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  margin-right: 0;
+  margin-left: 0;
+  display: block;
+}
+@media (max-width: 600px) {
+  .footer .footer-logo {
+    max-width: 240px;
   }
 }
