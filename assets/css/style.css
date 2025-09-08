@@ -690,7 +690,7 @@ section {
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   padding: 15px 20px;
   transition: 0.3s;
-  border-radius: 0;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -712,12 +712,15 @@ section {
 .features .nav-link:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .features .nav-link.active {
   background: var(--nav-background-color);
   color: var(--contrast-color);
   border-color: var(--accent-color);
+  box-shadow: 0 2px 8px rgba(81, 28, 37, 0.2);
 }
 
 .features .nav-link.active h4 {
@@ -731,8 +734,18 @@ section {
 
 .features .tab-pane h3 {
   color: var(--heading-color);
-  font-weight: 700;
-  font-size: 26px;
+}
+
+/* Arredondamento das imagens da seção features */
+.features .tab-pane img {
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features .tab-pane img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .features .tab-pane ul {
@@ -2578,6 +2591,35 @@ section {
   transform: scale(1.05);
 }
 
+/* ====== CONFIGURAÇÕES RESPONSIVAS PARA IMAGEM DE FUNDO DO HERO ====== */
+
+/* Configuração base para imagem de fundo responsiva */
+#hero {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  min-height: 100vh;
+}
+
+/* Mobile - otimização para performance */
+@media (max-width: 768px) {
+  #hero {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+/* Desktop - efeito parallax */
+@media (min-width: 769px) {
+  #hero {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
 /* 8. Animação suave para abertura/fechamento */
 .navmenu ul {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3263,21 +3305,14 @@ body.links-uteis-page {
   }
 
   .hero h2 span {
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     font-size: 32px !important;
     display: block;
     margin-top: 10px;
-    color: #ffffff !important;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+    color: #D8C8B4 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
     line-height: 1.2;
-    /* Gradiente para destaque */
-    background: linear-gradient(135deg, #D8C8B4, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    /* Fallback para navegadores que não suportam */
-    color: #ffffff !important;
   }
 
   .hero p {
@@ -3327,16 +3362,12 @@ body.links-uteis-page {
 
   .hero h2 span {
     font-size: 38px !important;
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     display: block;
     margin-top: 12px;
-    color: #ffffff !important;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
-    /* Gradiente para destaque */
-    background: linear-gradient(135deg, #D8C8B4, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #D8C8B4 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
   }
 
   .hero p {
@@ -3358,9 +3389,10 @@ body.links-uteis-page {
 
   .hero h2 span {
     font-size: 46px !important;
-    font-weight: 800 !important;
-    color: #ffffff !important;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+    font-weight: 700 !important;
+    color: #D8C8B4 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
   }
 
   .hero p {
