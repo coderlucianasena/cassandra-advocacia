@@ -160,31 +160,8 @@ cassandra-advocacia/
 ├── service-details.html
 ├── links-uteis.html
 ├── login.html
-├── PLANO_ESTRATEGICO.md
 └── README.md
 ```
-
----
-
-## 📈 Roadmap
-
-### **Fase 2 - Otimização (Atual)**
-- [ ] Performance > 90 PageSpeed
-- [ ] SEO score > 95
-- [ ] Acessibilidade WCAG 2.1
-- [ ] Analytics configurado
-
-### **Fase 3 - Funcionalidades (Setembro 2025)**
-- [ ] Sistema de agendamento
-- [ ] Blog com CMS
-- [ ] Formulários inteligentes
-- [ ] Chat online
-
-### **Fase 4 - Integração (Setembro 2025)**
-- [ ] Integração CRM
-- [ ] Automação marketing
-- [ ] Dashboard administrativo
-- [ ] Relatórios avançados
 
 ---
 
